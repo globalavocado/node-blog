@@ -5,16 +5,26 @@
     <title>Il Mio Blog</title>
 </head>
 <body>
-    Il Mio Blog
+    <h1>Il Mio Blog</h1>
+    <h2>elenco dei post del blog</h2>
     <ul class="blogposts">
+        <ul class="blogposts">
+            <% for(var i=0; i<posts.length; i++) {%>
+                <li class="post">
+                    <p><%= posts[i].title %></p>
+                    <p><%= posts[i].content %></p>
+                </li>
+                <% } %>
+        </ul>
     </ul>
-    
-    <form action="/blogposts" method="POST">
+   
+    <h2>modulo di iscrizione blog</h2>
+    <form action="/" method="POST">
         <input type="text" placeholder="blog title" name="blogtitle">
         <br>
         <input type="text" placeholder="blog content" name="blogcontent">
         <button type="submit">invia</button>
     </form>
-
+    
 </body>
 </html>
